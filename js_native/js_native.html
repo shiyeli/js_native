@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+     <meta charset="utf-8">
+    <script>
+      function clickme1() {
+          //alert('clickme');
+          window.webkit.messageHandlers.function_wkwebview.postMessage("来自js的消息wkwebView")
+      }
+
+      function clickme2(){
+
+      	 window["function_uiwebview"].apply("来自js的消息uiwebView")
+      }
+
+      function wkwebView_function(){
+
+      	return "我是js返回结果"
+      }
+     
+    </script>
+
+    <style type="text/css">
+     .btn1 {
+         height: 100px;
+         width: 150px;
+         -webkit-appearance : none ;  /*解决iphone safari上的圆角问题*/
+     }
+
+     .btn2 {
+         height: 100px;
+         width: 150px;
+         -webkit-appearance : none ;  /*解决iphone safari上的圆角问题*/
+     }
+
+    </style>
+
+</head>
+
+<body>
+
+<button class='btn1' onclick='clickme1()'>点击调用本地代码(WKWebView)</button >
+
+
+<button class="btn2" onclick="clickme2()">点击调用本地代码(UIWebView)</button>
+
+</body>
+</html>
