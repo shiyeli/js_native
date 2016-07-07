@@ -67,11 +67,11 @@
 }
 //主动调用js中的代码
 - (IBAction)clickBtn1:(id)sender {
-    NSString* str=[web2 stringByEvaluatingJavaScriptFromString:@"js_function()"];
+    NSString* str=[web2 stringByEvaluatingJavaScriptFromString:@"js_function('传给js函数的参数2')"];
     NSLog(@"%@",str);
 }
 - (IBAction)clickBtn2:(id)sender {
-    [web1 evaluateJavaScript:@"js_function()" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+    [web1 evaluateJavaScript:@"js_function('传给js函数的参数1')" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
         NSLog(@"%@",result);
     }];
 }
