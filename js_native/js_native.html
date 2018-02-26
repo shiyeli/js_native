@@ -15,8 +15,8 @@
       }
 
       function js_function(args){
-
-      	return args
+        var container=$("#container")
+        $(container).append(args)
       }
      
     </script>
@@ -44,6 +44,8 @@
 
 
 <button class="btn2" onclick="clickme2()">点击调用本地代码(UIWebView)</button>
+<div id="container"></div>
 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </body>
 </html>
